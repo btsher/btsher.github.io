@@ -21,20 +21,21 @@
 :root { 
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
   --default-color: #444444; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #413e66; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #1bb1dc; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --heading-color: #A0522D; /* Color for headings, subheadings and title throughout the website */
+  --alternate-color: #8ea8a9/* Used for items that do not look good under --accent-color */;
+  --accent-color: #FFDAC6; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #413e66;  /* The default color of the main navmenu links */
-  --nav-hover-color: #1bb1dc; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color: #7b3f00;  /* The default color of the main navmenu links */
+  --nav-hover-color: #A0522D; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
   --nav-dropdown-color: #444444; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #1bb1dc; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-hover-color: #FFF2D1; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -45,10 +46,10 @@
 }
 
 .dark-background {
-  --background-color: #2d2b46;
+  --background-color: #A0522D;
   --default-color: #ffffff;
   --heading-color: #ffffff;
-  --surface-color: #413e66;
+  --surface-color: #7b3f00;
   --contrast-color: #ffffff;
 }
 
@@ -685,7 +686,7 @@ section,
 .section {
   color: var(--default-color);
   background-color: var(--background-color);
-  padding: 60px 0;
+  padding: 30px 0;
   scroll-margin-top: 90px;
   overflow: clip;
 }
@@ -760,7 +761,7 @@ section,
 }
 
 .hero h1 span {
-  color: var(--accent-color);
+  color: var(--alternate-color);
 }
 
 .hero p {
@@ -839,6 +840,10 @@ section,
 /*--------------------------------------------------------------
 # Offerings Section
 --------------------------------------------------------------*/
+.offering-details .section-title{
+  padding-bottom: 5px;
+}
+
 .offering-details .offerings-item {
   color: color-mix(in srgb, var(--default-color), transparent 20%);
 }
@@ -887,19 +892,14 @@ section,
 # Call To Action Section
 --------------------------------------------------------------*/
 .call-to-action {
-  padding: 120px 0;
-  position: relative;
-  clip-path: inset(0);
-  justify-content: center;
-  text-align: center;
-}
-
-.call-to-action:before {
-  content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 50%);
-  position: absolute;
-  inset: 0;
-  z-index: 2;
+    background-image: url('../img/group.jpeg'); /* Replace with your image path */
+    background-size: cover; /* Ensures the image covers the entire section */
+    background-position: center; /* Centers the image */
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center; /* Centers content horizontally */
+    align-items: center; /* Centers content vertically */
+    text-align: center; /* Centers text */
 }
 
 .call-to-action .container {
@@ -951,14 +951,14 @@ section,
   font-size: 16px;
   padding: 0 20px;
   margin: -7px -8px -7px 0;
-  background: var(--accent-color);
+  background: var(--alternate-color);
   color: var(--contrast-color);
   transition: 0.3s;
   border-radius: 50px;
 }
 
 .call-to-action .newsletter-form input[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 20%);
+  background: color-mix(in srgb, var(--alternate-color), transparent 20%);
 }
 
 /*--------------------------------------------------------------
